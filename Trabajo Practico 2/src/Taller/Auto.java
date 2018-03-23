@@ -20,9 +20,18 @@ public class Auto extends Observable{
 		this.nivelAgua = nivelAgua;
 	}
 	
+	public Auto(Auto a) {
+		this.marca = a.getMarca();
+		this.patente = a.getPatente();
+		this.color = a.getColor();
+		this.nivelAceite = a.getNivelAceite();
+		this.presionNeumaticos = a.getPresionNeumaticos();
+		this.nivelAgua = a.getNivelAgua();
+	}
+	
 	public void cambiarAceite(double nivelAceiteNuevo) {
 		
-		Auto autitoRepuesto = new Auto(this.marca, this.patente, this.color, this.nivelAceite, this.presionNeumaticos, this.nivelAgua);
+		Auto autitoRepuesto = new Auto(this);
 		
 		this.nivelAceite = nivelAceiteNuevo;
 		this.setChanged();
@@ -32,7 +41,7 @@ public class Auto extends Observable{
 
 	public void inflarNeumaticos(double presionNeumaticosNuevo) {
 		
-		Auto autitoRepuesto = new Auto(this.marca, this.patente, this.color, this.nivelAceite, this.presionNeumaticos, this.nivelAgua);
+		Auto autitoRepuesto = new Auto(this);
 		
 		this.presionNeumaticos = presionNeumaticosNuevo;
 		this.setChanged();
@@ -42,7 +51,7 @@ public class Auto extends Observable{
 
 	public void renovarAgua(double nivelAguaNuevo) {
 		
-		Auto autitoRepuesto = new Auto(this.marca, this.patente, this.color, this.nivelAceite, this.presionNeumaticos, this.nivelAgua);
+		Auto autitoRepuesto = new Auto(this);
 		
 		this.nivelAgua = nivelAguaNuevo;
 		this.setChanged();

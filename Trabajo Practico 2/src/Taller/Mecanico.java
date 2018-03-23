@@ -14,11 +14,11 @@ public class Mecanico implements Observer{
 	}
 	
 	@Override
-	public void update(Observable o, Object arg1) {
+	public void update(Observable auto, Object autoViejito) {
 
-		if(o instanceof Auto) {
-			Auto autoNuevo = (Auto)o;
-			Auto autoViejo = (Auto)arg1;
+		if(auto instanceof Auto) {
+			Auto autoNuevo = (Auto)auto;
+			Auto autoViejo = (Auto)autoViejito;
 			
 			if(autoNuevo.getNivelAceite() != autoViejo.getNivelAceite()) {
 				System.out.println(this.nombre + " vio que al " + autoNuevo.getMarca().getNombre() 
